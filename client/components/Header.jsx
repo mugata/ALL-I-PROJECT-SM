@@ -1,60 +1,23 @@
-import React, { useState } from "react";
-import "./Header.css";
+import React from 'react';
+import './Header.css';
 
 const Header = () => {
-  // ✅ 상태 정의 추가
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  // ✅ 메뉴 토글 함수 정의
-  const toggleMenu = () => {
-    setIsMenuOpen((prev) => !prev);
-  };
   return (
-    <div>
-      <header className="header">
-        <div className="logo">
-          <a href="/">
-            <div className="imgFoot">
-              <img src="/images/foot.png" alt="로고" width="40" />
-            </div>
-            <span style={{ color: "#EEDC52" }} className="logo-text">
-              PAW{" "}
-            </span>
-            <span style={{ color: "#30CDB0" }} className="logo-text">
-              PAW{" "}
-            </span>
-          </a>
-        </div>
-        <div
-          className={`hamburger-menu ${isMenuOpen ? "active" : ""}`}
-          onClick={toggleMenu}
-        >
-          <div className="bar"></div>
-          <div className="bar"></div>
-          <div className="bar"></div>
-        </div>
-      </header>
-      {/* <div className="header-background"></div> */}
-      <nav className={`nav-menu ${isMenuOpen ? "active" : ""}`}>
+    <header className="header">
+      <div className="logo">
+        <a href="/">
+          <div className="imgFoot">
+            <img src="/images/foot.png" alt="로고" width="40" />
+          </div>
+          <span className="logo-text-front">PAW</span>
+          <span className="logo-text-back">PAW</span>
+        </a>
+      </div>
+      <nav className="nav-menu">
         <ul>
-          <li>
-            <a href="#" onClick={toggleMenu}>
-              Menu 1
-            </a>
-          </li>
-          <li>
-            <a href="#" onClick={toggleMenu}>
-              Menu 2
-            </a>
-          </li>
-          <li>
-            <a href="#" onClick={toggleMenu}>
-              Menu 3
-            </a>
-          </li>
         </ul>
       </nav>
-    </div>
+    </header>
   );
 };
 
